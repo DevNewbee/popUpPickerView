@@ -13,6 +13,9 @@
 		E85EE4791B91FDC500CDC840 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E85EE4781B91FDC500CDC840 /* Images.xcassets */; };
 		E85EE47C1B91FDC500CDC840 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E85EE47A1B91FDC500CDC840 /* LaunchScreen.xib */; };
 		E85EE4881B91FDC500CDC840 /* popupPickerViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85EE4871B91FDC500CDC840 /* popupPickerViewTests.swift */; };
+		E8702C4E1B9201E200F96513 /* PopupPickerVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8702C4D1B9201E200F96513 /* PopupPickerVIew.swift */; };
+		E8702C501B92070200F96513 /* DisplayTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8702C4F1B92070200F96513 /* DisplayTableView.swift */; };
+		E8702C521B9207AD00F96513 /* UILabelPlus.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8702C511B9207AD00F96513 /* UILabelPlus.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +39,9 @@
 		E85EE4811B91FDC500CDC840 /* popupPickerViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = popupPickerViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E85EE4861B91FDC500CDC840 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E85EE4871B91FDC500CDC840 /* popupPickerViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = popupPickerViewTests.swift; sourceTree = "<group>"; };
+		E8702C4D1B9201E200F96513 /* PopupPickerVIew.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupPickerVIew.swift; sourceTree = "<group>"; };
+		E8702C4F1B92070200F96513 /* DisplayTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayTableView.swift; sourceTree = "<group>"; };
+		E8702C511B9207AD00F96513 /* UILabelPlus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILabelPlus.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,7 +85,10 @@
 			children = (
 				E85EE4711B91FDC500CDC840 /* AppDelegate.swift */,
 				E85EE4731B91FDC500CDC840 /* ViewController.swift */,
+				E8702C4D1B9201E200F96513 /* PopupPickerVIew.swift */,
 				E85EE4751B91FDC500CDC840 /* Main.storyboard */,
+				E8702C4F1B92070200F96513 /* DisplayTableView.swift */,
+				E8702C511B9207AD00F96513 /* UILabelPlus.swift */,
 				E85EE4781B91FDC500CDC840 /* Images.xcassets */,
 				E85EE47A1B91FDC500CDC840 /* LaunchScreen.xib */,
 				E85EE46F1B91FDC500CDC840 /* Supporting Files */,
@@ -212,7 +221,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8702C4E1B9201E200F96513 /* PopupPickerVIew.swift in Sources */,
 				E85EE4741B91FDC500CDC840 /* ViewController.swift in Sources */,
+				E8702C501B92070200F96513 /* DisplayTableView.swift in Sources */,
+				E8702C521B9207AD00F96513 /* UILabelPlus.swift in Sources */,
 				E85EE4721B91FDC500CDC840 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -409,6 +421,7 @@
 				E85EE48D1B91FDC500CDC840 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E85EE48E1B91FDC500CDC840 /* Build configuration list for PBXNativeTarget "popupPickerViewTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +430,7 @@
 				E85EE4901B91FDC500CDC840 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
