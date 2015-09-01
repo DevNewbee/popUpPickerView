@@ -288,8 +288,16 @@
                             <outlet property="delegate" destination="sqq-Gj-vGd" id="j1q-26-DVK"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="示例" id="x7P-7D-zFh"/>
+                    <navigationItem key="navigationItem" title="示例" id="x7P-7D-zFh">
+                        <barButtonItem key="leftBarButtonItem" title="返回" id="42U-t9-D7S">
+                            <connections>
+                                <action selector="backButton:" destination="sqq-Gj-vGd" id="GLu-1h-151"/>
+                                <segue destination="rqh-g7-Wh0" kind="unwind" identifier="backToMainView" unwindAction="backSegue:" id="JFc-yz-M6I"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="backButton" destination="42U-t9-D7S" id="Q8s-zn-bLR"/>
                         <outlet property="buttonA" destination="4Lv-Z4-AEe" id="FdB-kZ-8bm"/>
                         <outlet property="primarySelection" destination="fv5-GY-irH" id="otm-H2-TgG"/>
                         <outlet property="secondarySelection" destination="Ivh-Sd-VVS" id="w5B-lw-xOM"/>
@@ -297,7 +305,53 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K7h-TE-9e8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2220" y="390"/>
+            <point key="canvasLocation" x="3111" y="390"/>
+        </scene>
+        <!--导航视图-->
+        <scene sceneID="iiW-jl-ZFY">
+            <objects>
+                <tableViewController id="fkQ-tz-3HQ" customClass="MainView" customModule="popupPickerView" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="3NB-Un-O5D">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <sections>
+                            <tableViewSection id="vdd-9R-gno">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="示例" textLabel="ORx-dg-l0Y" style="IBUITableViewCellStyleDefault" id="3yx-KV-rXu">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3yx-KV-rXu" id="rU5-fX-NZD">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="示例" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ORx-dg-l0Y">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="heightClass=regular-widthClass=compact">
+                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    </variation>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="sqq-Gj-vGd" kind="show" id="RCV-Ew-w0s"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="fkQ-tz-3HQ" id="clR-SL-X2W"/>
+                            <outlet property="delegate" destination="fkQ-tz-3HQ" id="1wH-vS-3tg"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="导航视图" id="7eY-3M-5d8"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lrM-DQ-NYv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="rqh-g7-Wh0" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="2310" y="390"/>
         </scene>
         <!--Item-->
         <scene sceneID="vT9-IN-bGf">
@@ -314,7 +368,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </toolbar>
                     <connections>
-                        <segue destination="sqq-Gj-vGd" kind="relationship" relationship="rootViewController" id="c2K-wR-mYA"/>
+                        <segue destination="fkQ-tz-3HQ" kind="relationship" relationship="rootViewController" id="YVD-aR-qlG"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xci-dR-lfp" userLabel="First Responder" sceneMemberID="firstResponder"/>

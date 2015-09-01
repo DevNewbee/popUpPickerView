@@ -136,12 +136,14 @@ class PopupPickerView: NSObject {
     /// 通过此函数来显示 popupView
     func popUp() {
         
+        
         UIView.animateWithDuration(0.23, delay: 0, options: UIViewAnimationOptions.CurveEaseOut, animations: { () -> Void in
             self.containerView.frame.origin = CGPointMake(0, 2*self.viewHeight)
             
             }, completion: nil)
         
     }
+    
     
 }
 
@@ -171,11 +173,51 @@ extension PopupPickerView: UIPickerViewDelegate, UIPickerViewDataSource {
 }
 
 extension PopupPickerView {
+    func tapResponserPrimary(dataSource: [String], currentRow: Int, buttonForPopulate: UIButton) {
+        // -1 代表还没有点过 初始化为第0个
+        self.buttonForPopulate = buttonForPopulate
+        refreshDataSource(dataSource, currentRow: currentRow == -1 ? 0 : currentRow)
+        if currentRow == -1 {
+            populateToUIBUtton(self.buttonForPopulate!, withtext: dataSource[0])
+        }
+        popUp()
+        
+    }
+    
+    func tapResponserSecondary(dataSource: [String], buttonForPupulate: UIButton, needRemove: Int ) {
+        var secondaryData: [String]?
+        self.buttonForPopulate = buttonForPupulate
+        
+        if needRemove == -1 {
+            secondaryData = ["请选择一级排序标识"] // 如果上一级还没有选择 那么下一级一定也是处于未选择的状态
+            refreshDataSource(secondaryData!, currentRow: 0)
+        } else  {
+            secondaryData = dataSource
+            secondaryData!.removeAtIndex(needRemove)
+            let currentRow = indexOfStringInArray(secondaryData!, querryString: (buttonForPupulate.titleLabel?.text)!)
+            if currentRow == -1 {
+                populateToUIBUtton(self.buttonForPopulate!, withtext: dataSource[0])
+            }
+            refreshDataSource(secondaryData!, currentRow: currentRow == -1 ? 0 : currentRow)
+        }
+        popUp()
+    }
     
     func populateToUIBUtton(button: UIButton, withtext text: String) {
         button.setAttributedTitle(NSAttributedString(string: text, attributes: [NSFontAttributeName: UIFont.systemFontOfSize(17),NSForegroundColorAttributeName: UIColor.blackColor()]), forState: UIControlState.Normal)
-        
-        
+    }
+    
+    func indexOfStringInArray(array: [String], querryString: String) -> Int {
+        var index = 0
+        var isExited = false
+        for item in array {
+            if item == querryString {
+                isExited = true
+                break
+            }
+            else { index++ }
+        }
+        return isExited ? index : -1 // －1 作为存在的标志给 二级排序的时候去除数据使用
     }
 }
 
